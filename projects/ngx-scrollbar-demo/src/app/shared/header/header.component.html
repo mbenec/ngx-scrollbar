@@ -1,5 +1,10 @@
 <div class="header">
 
+  <svg class="wave-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="var(--color-app-background)"
+          d="M0,288L48,266.7C96,245,192,203,288,202.7C384,203,480,245,576,250.7C672,256,768,224,864,224C960,224,1056,256,1152,261.3C1248,267,1344,245,1392,234.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+  </svg>
+
   <div class="container" [style.maxWidth.px]="900">
     <app-logo></app-logo>
 
@@ -17,10 +22,10 @@
         <img data-canonical-src="https://www.npmjs.com/package/ngx-scrollbar"
              src="https://img.shields.io/npm/v/ngx-scrollbar.svg?maxAge=2592000?style=plastic">
       </a>
-      <!--BUILD-->
-      <a href="https://travis-ci.org/MurhafSousli/ngx-scrollbar">
-        <img data-canonical-src="https://travis-ci.org/MurhafSousli/ngx-scrollbar"
-             src="https://travis-ci.org/MurhafSousli/ngx-scrollbar.svg?branch=master">
+      <!--BUILD TEST-->
+      <a href="https://github.com/MurhafSousli/ngx-scrollbar/actions?query=workflow%3Atests">
+        <img data-canonical-src="https://github.com/MurhafSousli/ngx-scrollbar/actions?query=workflow%3Atests"
+             src="https://github.com/MurhafSousli/ngx-scrollbar/workflows/tests/badge.svg">
       </a>
       <!--LICENSE-->
       <a href="https://github.com/MurhafSousli/ngx-scrollbar/blob/master/LICENSE">
@@ -45,5 +50,11 @@
              data-canonical-src="https://stackblitz.com/edit/ngx-scrollbar">
       </a>
     </div>
+
+
+    <a mat-stroked-button href="https://github.com/MurhafSousli/ngx-scrollbar/wiki">
+      <div class="btn-icon"><mat-icon>library_books</mat-icon></div>
+      <div class="btn-text">Go To Documentation </div>
+    </a>
   </div>
 </div>

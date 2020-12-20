@@ -9,7 +9,7 @@ ng-scrollbar {
 }
 
 .page-wrapper {
-  padding-top: 6em;
+  padding-top: 2em;
   background-color: white;
 }
 
@@ -17,4 +17,10 @@ ng-scrollbar {
   position: fixed;
   bottom: 2em;
   right: 2em;
+}
+
+.mat-fab {
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
 }
