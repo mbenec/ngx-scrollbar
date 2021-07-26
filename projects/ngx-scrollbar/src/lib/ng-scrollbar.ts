@@ -6,8 +6,10 @@ import {
   ViewChild,
   ContentChild,
   OnInit,
-  AfterViewChecked,
+  AfterViewInit,
+  OnChanges,
   OnDestroy,
+  SimpleChanges,
   NgZone,
   ElementRef,
   ChangeDetectorRef,
@@ -39,7 +41,7 @@ import { ScrollbarManager } from './utils/scrollbar-manager';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { '[class.ng-scrollbar]': 'true' }
 })
-export class NgScrollbar implements OnInit, AfterViewChecked, OnDestroy {
+export class NgScrollbar implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 
   private _disabled: boolean = false;
   private _sensorDisabled: boolean = this.manager.globalOptions.sensorDisabled;
@@ -295,8 +297,22 @@ export class NgScrollbar implements OnInit, AfterViewChecked, OnDestroy {
     });
   }
 
-  ngAfterViewChecked() {
+  ngOnChanges(changes: SimpleChanges) {
+    // Update only when the viewport is initialized
+    if (this.viewport) {
+      this.update();
+    }
+  }
+
+  ngAfterViewInit() {
+    // Initial update
     this.update();
+
+    // Update on dir changes
+    this.dir.change.pipe(
+      tap(() => this.update()),
+      takeUntil(this.destroyed)
+    ).subscribe();
   }
 
   ngOnDestroy() {
