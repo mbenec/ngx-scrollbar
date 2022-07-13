@@ -90,7 +90,7 @@
 
 .ng-scroll-viewport {
   -webkit-overflow-scrolling: touch;
-  contain: strict;
+  //contain: strict;
   will-change: scroll-position;
   overscroll-behavior: var(--scrollbar-overscroll-behavior);
 }
